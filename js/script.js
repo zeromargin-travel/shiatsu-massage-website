@@ -40,23 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Calendly Widget Initialization fallback check
-    function initCalendly() {
-        const embedContainer = document.getElementById('calendly-embed');
-        if (embedContainer && window.Calendly) {
-            window.Calendly.initInlineWidget({
-                url: 'https://calendly.com/shiatsu-massage-iyashi',
-                parentElement: embedContainer
-            });
-        }
-    }
-    
-    // Check if Calendly is already loaded or wait for it
-    if (window.Calendly) {
-        initCalendly();
-    } else {
-        window.addEventListener('load', initCalendly);
-    }
 });
 
 // URL Copy function
