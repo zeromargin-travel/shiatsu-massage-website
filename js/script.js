@@ -40,27 +40,23 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Load pricing from Decap CMS JSON data (if running on a server that can fetch them)
-    // For local dev without a server, fetch might fail due to CORS, but works in production (Netlify/Vercel)
-    async function loadPricing() {
-        try {
-            // Note: In a static site, you'd typically have a build step (like 11ty or Hugo) 
-            // that compiles these JSON files into the HTML. 
-            // Alternatively, we can try to fetch them dynamically if we expose a list of files,
-            // but for a pure HTML setup without a backend, we rely on the static HTML fallback 
-            // written in index.html for simplicity, unless we fetch specific known files.
-            
-            const prices = ['30-min.json', '50-min.json']; // Ideally generated
-            const grid = document.getElementById('pricing-grid');
-            
-            // We only do this if we want fully dynamic client-side rendering
-            // For now, the fallback HTML is used.
-        } catch (error) {
-            console.log("Using fallback pricing data.");
+    // Calendly Widget Initialization fallback check
+    function initCalendly() {
+        const embedContainer = document.getElementById('calendly-embed');
+        if (embedContainer && window.Calendly) {
+            window.Calendly.initInlineWidget({
+                url: 'https://calendly.com/shiatsu-massage-iyashi',
+                parentElement: embedContainer
+            });
         }
     }
     
-    // loadPricing();
+    // Check if Calendly is already loaded or wait for it
+    if (window.Calendly) {
+        initCalendly();
+    } else {
+        window.addEventListener('load', initCalendly);
+    }
 });
 
 // URL Copy function
