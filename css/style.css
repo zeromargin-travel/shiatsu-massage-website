@@ -453,26 +453,98 @@ footer a:hover {
     color: #718096;
 }
 
-/* Floating WhatsApp */
-.floating-wa {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  background-color: #25D366;
-  color: white;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
-  z-index: 1000;
-  transition: var(--transition);
+/* Header SNS */
+.header-sns {
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+}
+.header-sns a {
+    color: var(--text-dark);
+    transition: var(--transition);
+}
+.header-sns a:hover {
+    color: var(--primary-color);
+    transform: translateY(-2px);
 }
 
-.floating-wa:hover {
-  transform: scale(1.1) translateY(-5px);
+/* Share Buttons */
+.share-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+}
+.share-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-sm);
+}
+.wa-share { background-color: #25D366; }
+.fb-share { background-color: #1877F2; }
+.x-share { background-color: #000000; }
+.in-share { background-color: #0A66C2; }
+.copy-share { background-color: var(--primary-dark); }
+.native-share { background-color: var(--accent-color); }
+
+/* Dual Floating Action Bar (CTA) */
+.floating-cta-container {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    z-index: 1000;
+}
+
+.floating-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0.8rem 1.4rem;
+    border-radius: 50px;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    transition: var(--transition);
+}
+
+.floating-btn:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.floating-wa-btn {
+    background-color: #25D366;
+}
+
+.floating-book-btn {
+    background-color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+    .floating-cta-container {
+        bottom: 1rem;
+        right: 1rem;
+        left: 1rem;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .floating-btn {
+        flex: 1;
+        justify-content: center;
+        padding: 0.8rem 0.5rem;
+        font-size: 0.85rem;
+    }
 }
 
 /* Animations */

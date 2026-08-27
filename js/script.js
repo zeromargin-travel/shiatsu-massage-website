@@ -48,3 +48,26 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // loadPricing();
 });
+
+// URL Copy function
+function copyShareUrl() {
+    const url = window.location.href;
+    navigator.clipboard.writeText(url).then(() => {
+        alert("Link gekopieerd naar klembord! (URLをコピーしました)");
+    }).catch(err => {
+        console.error('Failed to copy: ', err);
+    });
+}
+
+// Web Share API function
+function nativeShare() {
+    if (navigator.share) {
+        navigator.share({
+            title: 'Shiatsu Massage Iyashi in Enschede',
+            text: 'Traditionele Japanse Shiatsu-massage in Enschede.',
+            url: window.location.href,
+        }).catch(console.error);
+    } else {
+        copyShareUrl();
+    }
+}
