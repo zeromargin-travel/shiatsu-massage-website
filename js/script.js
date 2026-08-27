@@ -16,7 +16,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Header scroll effect
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navMenu = document.getElementById('navMenu');
+    if (mobileMenuBtn && navMenu) {
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when link is clicked
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+    }
     const header = document.querySelector('header');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
