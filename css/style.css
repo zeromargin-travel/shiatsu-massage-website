@@ -114,25 +114,21 @@ nav a:hover::after {
 
 /* Hero Section */
 .hero {
-  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   position: relative;
-  background-image: linear-gradient(rgba(252, 251, 249, 0.85), rgba(252, 251, 249, 0.95)), url('https://cdn.peraichi.com/userData/53421ea1-3241-495f-b9ea-315ce1a42b2b/img/662f49757db38/original.jpeg');
+  background-color: var(--bg-alt);
+  background-image: linear-gradient(rgba(252, 251, 249, 0.88), rgba(252, 251, 249, 0.94)), url('https://cdn.peraichi.com/userData/53421ea1-3241-495f-b9ea-315ce1a42b2b/img/662f49757db38/original.jpeg');
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
-  padding: 5% 5% 2%;
+  padding: 8rem 5% 4rem;
 }
 
 .hero-content {
   max-width: 800px;
-  animation: fadeUp 1.2s ease-out forwards;
-  opacity: 0;
-  transform: translateY(30px);
-  margin-top: 60px;
+  animation: fadeUp 1s ease-out forwards;
 }
 
 .hero-subtitle {
