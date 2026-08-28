@@ -53,22 +53,21 @@ function nativeShare() {
 
 // Favorite / Add to Homescreen Logic
 document.addEventListener("DOMContentLoaded", () => {
-    const favBtn = document.querySelector(".floating-fav-btn");
-    if (!favBtn) return;
+    const favBtns = document.querySelectorAll(".floating-fav-btn, .inline-fav-btn");
+    if (favBtns.length === 0) return;
     
     const isSaved = localStorage.getItem("iyashi_favorite");
-    if (isSaved) {
-        favBtn.classList.add("active");
-    }
-    
-    favBtn.addEventListener("click", (e) => {
-        e.preventDefault();
-        const wasActive = favBtn.classList.contains("active");
-        if (!wasActive) {
-            favBtn.classList.add("active");
-            localStorage.setItem("iyashi_favorite", "true");
-        }
-        showToast();
+    favBtns.forEach(btn => {
+        if (isSaved) btn.classList.add("active");
+        
+        btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            if (!btn.classList.contains("active")) {
+                favBtns.forEach(b => b.classList.add("active"));
+                localStorage.setItem("iyashi_favorite", "true");
+            }
+            showToast();
+        });
     });
 });
 
