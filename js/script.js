@@ -40,9 +40,13 @@ function copyShareUrl() {
 // Web Share API function
 function nativeShare() {
     if (navigator.share) {
+        const pageTitle = document.title || "Shiatsu Massage Iyashi";
+        const metaDescElement = document.querySelector("meta[name="description"]");
+        const pageDesc = metaDescElement ? metaDescElement.getAttribute("content") : "";
+
         navigator.share({
-            title: 'Shiatsu Massage Iyashi in Enschede',
-            text: 'Traditionele Japanse Shiatsu-massage in Enschede.',
+            title: pageTitle,
+            text: pageDesc,
             url: window.location.href,
         }).catch(console.error);
     } else {
