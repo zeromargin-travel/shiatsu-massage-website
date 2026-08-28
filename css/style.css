@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
 :root {
   /* Elegant Spa Color Palette */
   --primary-color: #8c9779;     /* Sage Green */
@@ -120,7 +124,7 @@ nav a:hover::after {
   text-align: center;
   position: relative;
   background-color: var(--bg-alt);
-  background-image: linear-gradient(rgba(252, 251, 249, 0.88), rgba(252, 251, 249, 0.94)), url('https://cdn.peraichi.com/userData/53421ea1-3241-495f-b9ea-315ce1a42b2b/img/662f49757db38/original.jpeg');
+  background-image: linear-gradient(rgba(252, 251, 249, 0.65), rgba(252, 251, 249, 0.75)), url('https://cdn.peraichi.com/userData/53421ea1-3241-495f-b9ea-315ce1a42b2b/img/662f49757db38/original.jpeg');
   background-size: cover;
   background-position: center;
   padding: 8rem 5% 4rem;
@@ -156,36 +160,42 @@ nav a:hover::after {
 
 /* Buttons */
 .btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   padding: 1rem 2.5rem;
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
   color: white;
   text-decoration: none;
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: 1px;
   text-transform: uppercase;
-  font-size: 0.85rem;
-  transition: var(--transition);
-  border: 1px solid var(--primary-color);
-  border-radius: 2px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(212, 163, 115, 0.4);
 }
 
 .btn:hover {
-  background-color: var(--primary-dark);
-  border-color: var(--primary-dark);
+  background-color: #c49262;
   color: white;
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(212, 163, 115, 0.6);
 }
 
 .btn-secondary {
   background-color: transparent;
-  color: var(--primary-color);
+  color: var(--primary-dark);
+  border: 1px solid var(--primary-dark);
+  box-shadow: none;
 }
 
 .btn-secondary:hover {
-  background-color: rgba(140, 151, 121, 0.05);
-  color: var(--primary-dark);
+  background-color: var(--primary-dark);
+  color: white;
+  box-shadow: 0 4px 15px rgba(106, 116, 89, 0.3);
 }
 
 /* Sections */
@@ -423,7 +433,6 @@ footer {
   width: auto;
   margin-bottom: 2rem;
   opacity: 0.9;
-  filter: brightness(0) invert(1); /* makes the logo white */
 }
 
 footer h3 {
@@ -656,4 +665,45 @@ iframe[src*="netlify"], #netlify-hud, [data-netlify-site-id], div[class*="netlif
         font-size: 0.82rem;
         border-radius: 50px;
     }
+}
+
+
+/* Toast Notification */
+.toast-notification {
+    position: fixed;
+    bottom: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.85);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 14px;
+    z-index: 1001;
+    transition: bottom 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    pointer-events: none;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    line-height: 1.5;
+}
+.toast-notification.show {
+    bottom: 40px;
+}
+
+/* Floating Favorite Pill Button */
+.floating-fav-btn {
+    background-color: #fff;
+    color: #d89b00;
+    border: 1px solid #ffca28;
+}
+.floating-fav-btn.active {
+    background-color: #ffca28;
+    color: #fff;
+    border: 1px solid #ffca28;
+}
+.floating-fav-btn:hover {
+    background-color: #fff9e6;
+    color: #d89b00;
 }

@@ -1,20 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            if(targetId === '#') return;
-            
-            const targetElement = document.querySelector(targetId);
-            if(targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80, // Adjust for fixed header
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
+    
 
     // Mobile Menu Toggle
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
@@ -63,4 +48,62 @@ function nativeShare() {
     } else {
         copyShareUrl();
     }
+}
+
+
+// Favorite / Add to Homescreen Logic
+document.addEventListener("DOMContentLoaded", () => {
+    const favBtn = document.querySelector(".floating-fav-btn");
+    if (!favBtn) return;
+    
+    const isSaved = localStorage.getItem("iyashi_favorite");
+    if (isSaved) {
+        favBtn.classList.add("active");
+    }
+    
+    favBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        const wasActive = favBtn.classList.contains("active");
+        if (!wasActive) {
+            favBtn.classList.add("active");
+            localStorage.setItem("iyashi_favorite", "true");
+        }
+        showToast();
+    });
+});
+
+function showToast() {
+    let toast = document.getElementById("fav-toast");
+    if (!toast) {
+        toast = document.createElement("div");
+        toast.id = "fav-toast";
+        toast.className = "toast-notification";
+        document.body.appendChild(toast);
+    }
+    
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    const isGerman = window.location.pathname.includes("/de/");
+    let message = "";
+    let title = isGerman ? "Gespeichert!" : "Bewaard!";
+    
+    if (/android/i.test(userAgent)) {
+        message = isGerman ? 
+            "Tippen Sie auf das Menü [⋮] und dann auf<br><b>Zum Startbildschirm hinzufügen</b>!" : 
+            "Tik op het menu [⋮] en kies<br><b>Toevoegen aan startscherm</b>!";
+    } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        message = isGerman ? 
+            "Tippen Sie unten auf Teilen [↑] und dann auf<br><b>Zum Startbildschirm hinzufügen</b>!" : 
+            "Tik op delen [↑] en kies<br><b>Zet op beginscherm</b>!";
+    } else {
+        message = isGerman ? 
+            "Drücken Sie <b>Ctrl+D</b> (Mac: Cmd+D),<br>um diese Seite zu speichern!" :
+            "Toets <b>Ctrl+D</b> (Mac: Cmd+D) in<br>om deze pagina te bewaren!";
+    }
+    
+    toast.innerHTML = `⭐ <b>${title}</b><br>${message}`;
+    toast.classList.add("show");
+    
+    setTimeout(() => {
+        toast.classList.remove("show");
+    }, 4500);
 }
