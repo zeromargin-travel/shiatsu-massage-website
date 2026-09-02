@@ -422,10 +422,11 @@ section {
 
 /* Footer */
 footer {
-  background-color: #1a202c;
+  background: linear-gradient(rgba(18, 26, 22, 0.88), rgba(18, 26, 22, 0.92)), url('../images/footer-bg.jpg') center/cover no-repeat;
   color: #e2e8f0;
   text-align: center;
   padding: 5rem 5% 2rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
 }
 
 .footer-logo {
@@ -640,6 +641,10 @@ iframe[src*="netlify"], #netlify-hud, [data-netlify-site-id], div[class*="netlif
 
     section {
         padding: 3.5rem 0;
+    }
+
+    footer, .custom-footer {
+        padding-bottom: 6.5rem;
     }
 
     /* Floating CTA Bar on Mobile (Sticky Bottom Floating Pill Bar) */
