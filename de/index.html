@@ -58,7 +58,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
     
     <!-- CSS -->
-    <link rel="stylesheet" href="../css/style.css?v=4.0">
+    <link rel="stylesheet" href="../css/style.css?v=4.1">
     
     <!-- Netlify Identity (Required for CMS Authentication) -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
@@ -104,13 +104,27 @@
         <section class="hero" id="home">
             <div class="hero-content">
                 
-                <div style="background-color: var(--secondary-color); color: white; padding: 0.6rem 1rem; border-radius: 50px; display: inline-block; margin-bottom: 1.5rem; font-size: 0.9rem; font-weight: 500; box-shadow: var(--shadow-sm);">
-                    🚗 Kostenlose Parkplätze an der Praxis verfügbar!
-                </div>
                 <h1 style="font-size: 2.5rem; color: var(--primary-dark); margin-bottom: 1rem; font-family: var(--font-heading);">Shiatsu Massage Iyashi</h1>
                 <p>Lassen Sie alle Anspannung los. Unser erfahrener Masseur hilft Ihnen dabei, sich mit gezielten japanischen Druckpunkttechniken ohne Öl zu entspannen, abgestimmt auf Ihre individuellen Bedürfnisse.</p>
-                <div style="margin-top: 1rem; margin-bottom: 2rem;">
-                    <span style="font-size: 1.2rem; font-weight: bold;">Google-Bewertungen 4.9 ⭐️⭐️⭐️⭐️⭐️ (201)</span>
+                
+                <!-- Trust Badges (安心バッジ) -->
+                <div class="trust-badge-container">
+                    <div class="trust-badge">
+                        <span class="trust-badge-icon">🕒</span>
+                        <span>24/7 Online-Buchung</span>
+                    </div>
+                    <div class="trust-badge">
+                        <span class="trust-badge-icon">🚗</span>
+                        <span>Kostenlose Parkplätze vor Ort</span>
+                    </div>
+                    <div class="trust-badge">
+                        <span class="trust-badge-icon">👘</span>
+                        <span>Ohne Entkleiden (Kein Öl)</span>
+                    </div>
+                    <div class="trust-badge trust-badge-highlight">
+                        <span class="trust-badge-icon">⭐</span>
+                        <span>4.9 Google Sterne (201+ Bewertungen)</span>
+                    </div>
                 </div>
                 <a href="#booking" class="btn">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H1a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/></svg>
@@ -358,6 +372,22 @@
                         <p class="guide-desktop-only" style="margin: 0; color: #555; font-size: 0.9rem; line-height: 1.5;">
                             💻 <strong>PC / Mac:</strong> Klicken Sie auf das <span style="color: #d89b00;">⭐️</span>-Symbol in Ihrem Browser (oder drücken Sie <strong>Ctrl+D / Cmd+D</strong>), um diese Seite zu speichern!
                         </p>
+                    </div>
+                    
+                    <!-- Booking Trust Badges -->
+                    <div class="trust-badge-container" style="margin-bottom: 1.5rem;">
+                        <div class="trust-badge">
+                            <span class="trust-badge-icon">🕒</span>
+                            <span>24/7 Sofortbuchung</span>
+                        </div>
+                        <div class="trust-badge">
+                            <span class="trust-badge-icon">🚗</span>
+                            <span>Kostenloser Parkplatz</span>
+                        </div>
+                        <div class="trust-badge">
+                            <span class="trust-badge-icon">⚡</span>
+                            <span>Sofortige Bestätigung</span>
+                        </div>
                     </div>
                     
                     <a href="https://calendly.com/shiatsu-massage-iyashi" target="_blank" rel="noopener noreferrer" onclick="gtag('event', 'click_calendly_button', {'event_category': 'booking', 'event_label': window.location.pathname});" style="display: inline-block; background-color: #2a2a2a; color: white; padding: 1.2rem 2.5rem; font-size: 1.15rem; font-weight: 600; border-radius: 50px; text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0, 0.2); transition: all 0.3s ease; width: 100%; max-width: 400px;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 25px rgba(0,0,0, 0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(0,0,0, 0.2)';">
