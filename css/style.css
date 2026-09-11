@@ -130,6 +130,7 @@ nav a:hover::after {
   padding: 8rem 5% 4rem;
 }
 
+/* Responsive Parallax & Window Effect */
 @media (min-width: 769px) {
   .hero-parallax {
     background-attachment: fixed;
@@ -144,6 +145,39 @@ nav a:hover::after {
     background-position: center center !important;
     background-repeat: no-repeat !important;
     background-size: cover !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-parallax {
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: cover;
+  }
+
+  .section-window-parallax {
+    position: relative;
+    background: transparent !important;
+    overflow: hidden;
+  }
+
+  .section-window-parallax::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    background-image: linear-gradient(rgba(252, 251, 249, 0.92), rgba(252, 251, 249, 0.92)), url('https://cdn.peraichi.com/userData/53421ea1-3241-495f-b9ea-315ce1a42b2b/img/662f49757db38/original.jpeg');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .section-window-parallax > * {
+    position: relative;
+    z-index: 1;
   }
 }
 
