@@ -14,7 +14,14 @@
     const MAX_TILT = 15; // Maximum tilt angle in degrees
     const PERSPECTIVE = 1000; // Perspective distance in px
 
-    const cards = document.querySelectorAll('.card, .review-card, .google-live-card, .campaign-card, .calendly-external-wrapper, .compact-pricing-box, .js-tilt');
+    const allCards = document.querySelectorAll('.card, .review-card, .google-live-card, .campaign-card, .calendly-external-wrapper, .compact-pricing-box, .js-tilt');
+    // #booking セクション内のカードと no-tilt クラスのカードはチルト対象から除外
+    const bookingSection = document.getElementById('booking');
+    const cards = Array.from(allCards).filter(card => {
+        if (card.classList.contains('no-tilt')) return false;
+        if (bookingSection && bookingSection.contains(card)) return false;
+        return true;
+    });
     if (!cards.length) return;
 
     // Track active cards visible in viewport using IntersectionObserver
