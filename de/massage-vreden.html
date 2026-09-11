@@ -58,12 +58,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
     
     <!-- CSS -->
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style.css?v=4.0">
     
     <!-- Netlify Identity (Required for CMS Authentication) -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
-<body>
+<body class="parallax-bg">
 
     <header>
         <a href="#home" class="logo-link">
@@ -122,7 +122,7 @@
         </section>
         <!-- 2. About Shiatsu -->
         
-        <section style="background: #eef8f1; padding: 3rem 1rem; text-align: center; border-bottom: 1px solid #dcebdf;">
+        <section style="padding: 3rem 1rem; text-align: center; border-bottom: 1px solid #dcebdf">
             <div class="container" style="max-width: 700px; margin: 0 auto;">
                 <h2 style="color: var(--secondary-color); font-size: 1.8rem; margin-bottom: 1rem;">Herzlich willkommen, Einwohner von Vreden!</h2>
                 <p style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 1rem;">Suchen Sie eine authentische japanische Shiatsu-Massage in der Nähe von Vreden? Unsere Praxis in Enschede ist über Landstraßen in nur ca. 30 Autominuten erreichbar. Gönnen Sie sich eine kleine Auszeit jenseits der Grenze.</p>
@@ -143,7 +143,7 @@
             </div>
         </section>
         <!-- 3. Video -->
-        <section id="video" style="background: var(--bg-surface); text-align: center;">
+        <section id="video" style="text-align: center">
             <h2 class="section-title">Ein Einblick in die Behandlung</h2>
             <div class="video-container">
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/s-OHK-K2gn4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -163,7 +163,7 @@
             </div>
         </section>
         <!-- 5. Reviews -->
-        <section id="reviews" style="background: #f7f7f7;">
+        <section id="reviews">
             <h2 class="section-title">Google-Bewertungen (4.9 ⭐)</h2>
             <p class="text-center" style="margin-bottom: 1.5rem;">Kürzlich habe ich auf Google Maps die Marke von 200 Bewertungen überschritten. Jede Bewertung, jedes Kompliment und jedes Feedback bedeutet mir unglaublich viel!</p>
             
@@ -253,7 +253,7 @@
                 </div>
             </div>
         </section>
-            <section id="autumn-offer" style="background: var(--primary-light);">
+            <section id="autumn-offer">
             <div class="container text-center">
                 <h2 class="section-title">Spezieller Reisekostenrabatt für Vreden</h2>
                 <p style="color: var(--secondary-color); font-weight: bold; margin-bottom: 2rem;">※Exklusiv für Einwohner von Vreden</p>
@@ -271,7 +271,7 @@
                 </div>
             </div>
         </section>
-            <section id="campaigns" style="background: #fff5eb;">
+            <section id="campaigns">
             <h2 class="section-title">Speciale Campagnes</h2>
             
             <!-- Vriendenactie -->
@@ -344,7 +344,7 @@
         </section>
         </div>
         <!-- 7. Booking -->
-        <section id="booking" style="background: var(--bg-alt);">
+        <section id="booking">
             <div class="container text-center">
                 <h2 class="section-title">Termin buchen</h2>
                 
@@ -358,7 +358,7 @@
                         
                         <!-- Mobile Guide (iPhone & Android) -->
                         <ul class="guide-mobile-only" style="margin: 0; padding-left: 1.2rem; color: #555; font-size: 0.88rem; line-height: 1.6;">
-                            <li style="margin-bottom: 0.3rem;">📱 <strong>iPhone (Safari):</strong> Tippen Sie unten auf Teilen <code style="background: rgba(0,0,0,0.06); padding: 1px 5px; border-radius: 4px;">[↑]</code> ➔ <strong>Zum Startbildschirm hinzufügen</strong></li>
+                            <li style="margin-bottom: 0.3rem;">📱 <strong>iPhone (Safari):</strong> Tippen Sie unten rechts auf <code style="background: rgba(0,0,0,0.06); padding: 1px 5px; border-radius: 4px;">[•••]</code> ➔ <strong>Zum Startbildschirm hinzufügen</strong></li>
                             <li>📱 <strong>Android (Chrome):</strong> Tippen Sie oben rechts auf <code style="background: rgba(0,0,0,0.06); padding: 1px 5px; border-radius: 4px;">[⋮]</code> ➔ <strong>Zum Startbildschirm hinzufügen</strong></li>
                         </ul>
 
@@ -399,7 +399,7 @@
         </section>
 
         <!-- 9. Workshop & Updates -->
-        <section id="workshop" style="background: var(--bg-surface);">
+        <section id="workshop">
             <div class="container text-center">
                 <h2 class="section-title">Workshop Shiatsu (ワークショップ)</h2>
                 <p>Möchten Sie selbst Shiatsu lernen? Entdecken Sie die japanische Druckpunktmassage!</p>
@@ -507,6 +507,8 @@
 
     <!-- Scripts -->
     <script src="../js/script.js"></script>
+    <script src="../js/tilt.js"></script>
+
     <script>
       // Netlify Identity Login Redirect logic
       if (window.netlifyIdentity) {

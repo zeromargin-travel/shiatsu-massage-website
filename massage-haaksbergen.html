@@ -58,12 +58,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
     
     <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=4.0">
     
     <!-- Netlify Identity (Required for CMS Authentication) -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
-<body>
+<body class="parallax-bg">
 
     <header>
         <a href="#home" class="logo-link">
@@ -117,7 +117,7 @@
         </section>
         <!-- 2. About Shiatsu -->
         
-        <section style="background: #eef8f1; padding: 3rem 1rem; text-align: center; border-bottom: 1px solid #dcebdf;">
+        <section style="padding: 3rem 1rem; text-align: center; border-bottom: 1px solid #dcebdf">
             <div class="container" style="max-width: 700px; margin: 0 auto;">
                 <h2 style="color: var(--secondary-color); font-size: 1.8rem; margin-bottom: 1rem;">Welkom inwoners van Haaksbergen!</h2>
                 <p style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 1rem;">Wilt u uw lichaam en geest in balans brengen met een traditionele Shiatsu massage? Vanuit Haaksbergen is het via de vernieuwde N18 (Twenteroute) slechts 20 minuten rijden naar onze rustgevende praktijk in Enschede.</p>
@@ -138,7 +138,7 @@
             </div>
         </section>
         <!-- 3. Video -->
-        <section id="video" style="background: var(--bg-surface); text-align: center;">
+        <section id="video" style="text-align: center">
             <h2 class="section-title">Een kijkje in de behandeling</h2>
             <div class="video-container">
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/s-OHK-K2gn4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -158,7 +158,7 @@
             </div>
         </section>
         <!-- 5. Reviews -->
-        <section id="reviews" style="background: #f7f7f7;">
+        <section id="reviews">
             <h2 class="section-title">Google-recensies (4.9 ⭐)</h2>
             <p class="text-center" style="margin-bottom: 1.5rem;">Onlangs heb ik de 200 reviews op Google Maps gepasseerd. Elke review, elk compliment en alle feedback betekenen ontzettend veel voor mij!</p>
             
@@ -248,7 +248,7 @@
                 </div>
             </div>
         </section>
-            <section id="autumn-offer" style="background: var(--primary-light);">
+            <section id="autumn-offer">
             <div class="container text-center">
                 <h2 class="section-title">SPECIALE HAAKSBERGEN REISKOSTENKORTING</h2>
                 <p style="color: var(--secondary-color); font-weight: bold; margin-bottom: 2rem;">※Exclusief voor inwoners van de regio Haaksbergen</p>
@@ -266,7 +266,7 @@
                 </div>
             </div>
         </section>
-            <section id="campaigns" style="background: #fff5eb;">
+            <section id="campaigns">
             <h2 class="section-title">Speciale Campagnes</h2>
             
             <!-- Vriendenactie -->
@@ -339,7 +339,7 @@
         </section>
         </div>
         <!-- 7. Booking -->
-        <section id="booking" style="background: var(--bg-alt);">
+        <section id="booking">
             <div class="container text-center">
                 <h2 class="section-title">Afspraak Maken</h2>
                 
@@ -353,7 +353,7 @@
                         
                         <!-- Mobile Guide (iPhone & Android) -->
                         <ul class="guide-mobile-only" style="margin: 0; padding-left: 1.2rem; color: #555; font-size: 0.88rem; line-height: 1.6;">
-                            <li style="margin-bottom: 0.3rem;">📱 <strong>iPhone (Safari):</strong> Tik onderaan op delen <code style="background: rgba(0,0,0,0.06); padding: 1px 5px; border-radius: 4px;">[↑]</code> ➔ <strong>Zet op beginscherm</strong></li>
+                            <li style="margin-bottom: 0.3rem;">📱 <strong>iPhone (Safari):</strong> Tik rechtsonder op <code style="background: rgba(0,0,0,0.06); padding: 1px 5px; border-radius: 4px;">[•••]</code> ➔ <strong>Zet op beginscherm</strong></li>
                             <li>📱 <strong>Android (Chrome):</strong> Tik rechtsboven op <code style="background: rgba(0,0,0,0.06); padding: 1px 5px; border-radius: 4px;">[⋮]</code> ➔ <strong>Toevoegen aan startscherm</strong></li>
                         </ul>
 
@@ -394,7 +394,7 @@
         </section>
 
         <!-- 9. Workshop & Updates -->
-        <section id="workshop" style="background: var(--bg-surface);">
+        <section id="workshop">
             <div class="container text-center">
                 <h2 class="section-title">Workshop Shiatsu (ワークショップ)</h2>
                 <p>Wil je zelf shiatsu leren? Ontdek Japanse drukpuntmassage!</p>
@@ -502,6 +502,8 @@
 
     <!-- Scripts -->
     <script src="js/script.js"></script>
+    <script src="js/tilt.js"></script>
+
     <script>
       // Netlify Identity Login Redirect logic
       if (window.netlifyIdentity) {
