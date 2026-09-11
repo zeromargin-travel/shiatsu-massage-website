@@ -11,6 +11,11 @@
         return;
     }
 
+    // スマホ・タブレットでは無効（PC のみ動作）
+    if (window.matchMedia && window.matchMedia('(max-width: 768px)').matches) {
+        return;
+    }
+
     const MAX_TILT = 15; // Maximum tilt angle in degrees
     const PERSPECTIVE = 1000; // Perspective distance in px
 
