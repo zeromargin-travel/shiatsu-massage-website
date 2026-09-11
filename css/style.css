@@ -130,37 +130,53 @@ nav a:hover::after {
   padding: 8rem 5% 4rem;
 }
 
-/* Universal Parallax & Window Effect (Desktop & Mobile Safe) */
-@media (min-width: 769px) {
-  .hero-parallax {
-    background-attachment: fixed !important;
-    background-position: center center !important;
-    background-repeat: no-repeat !important;
-    background-size: cover !important;
-  }
-
-  .section-window-parallax {
-    background-attachment: fixed !important;
-    background-image: linear-gradient(rgba(252, 251, 249, 0.85), rgba(252, 251, 249, 0.85)), url('https://cdn.peraichi.com/userData/53421ea1-3241-495f-b9ea-315ce1a42b2b/img/662f49757db38/original.jpeg') !important;
-    background-position: center center !important;
-    background-repeat: no-repeat !important;
-    background-size: cover !important;
-  }
+/* ============================================================
+   Plan A: Body Background Parallax (de/index.html only)
+   - body に class="parallax-bg" を付与したページのみ適用
+   - iOS Safari 対応: スマホは scroll に切り替え
+   ============================================================ */
+body.parallax-bg {
+  background-image: url('https://cdn.peraichi.com/userData/53421ea1-3241-495f-b9ea-315ce1a42b2b/img/662f49757db38/original.jpeg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
-@media (max-width: 768px) {
-  .hero-parallax {
-    background-attachment: scroll !important;
-    background-position: center center !important;
-    background-size: cover !important;
-  }
+/* PC: すべてのsectionを半透明化（背景画像が透けて見える） */
+body.parallax-bg section {
+  background: rgba(252, 251, 249, 0.82) !important;
+}
 
-  .section-window-parallax {
-    background-attachment: scroll !important;
-    background-image: linear-gradient(rgba(252, 251, 249, 0.85), rgba(252, 251, 249, 0.85)), url('https://cdn.peraichi.com/userData/53421ea1-3241-495f-b9ea-315ce1a42b2b/img/662f49757db38/original.jpeg') !important;
-    background-position: center center !important;
-    background-repeat: no-repeat !important;
-    background-size: cover !important;
+/* ヒーローセクション: さらに透明度を高めて画像をくっきり見せる */
+body.parallax-bg .hero {
+  background-image: linear-gradient(rgba(252, 251, 249, 0.55), rgba(252, 251, 249, 0.65)), url('https://cdn.peraichi.com/userData/53421ea1-3241-495f-b9ea-315ce1a42b2b/img/662f49757db38/original.jpeg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-attachment: inherit !important;
+}
+
+/* 特定セクション: アクセントカラーを半透明で残す */
+body.parallax-bg #autumn-offer {
+  background: rgba(255, 243, 220, 0.88) !important;
+}
+body.parallax-bg #campaigns {
+  background: rgba(255, 245, 235, 0.88) !important;
+}
+body.parallax-bg #video {
+  background: rgba(245, 244, 242, 0.88) !important;
+  text-align: center;
+}
+
+/* フッター: 暗いグラデーションを維持（透けさせない） */
+body.parallax-bg footer {
+  background: linear-gradient(rgba(18, 26, 22, 0.95), rgba(18, 26, 22, 0.98)), url('https://cdn.peraichi.com/userData/53421ea1-3241-495f-b9ea-315ce1a42b2b/img/662f49757db38/original.jpeg') center/cover no-repeat !important;
+}
+
+/* スマホ（iOS Safari対応）: fixed→scroll に変更 */
+@media (max-width: 768px) {
+  body.parallax-bg {
+    background-attachment: scroll;
   }
 }
 
