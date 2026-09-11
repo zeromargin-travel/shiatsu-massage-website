@@ -130,6 +130,15 @@ nav a:hover::after {
   padding: 8rem 5% 4rem;
 }
 
+@media (min-width: 769px) {
+  .hero-parallax {
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
 .hero-content {
   max-width: 800px;
   animation: fadeUp 1s ease-out forwards;
