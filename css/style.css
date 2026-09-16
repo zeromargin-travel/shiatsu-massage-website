@@ -169,9 +169,9 @@ body.parallax-bg #video {
   text-align: center;
 }
 
-/* フッター: 暗いグラデーションを維持（透けさせない） */
+/* フッター: 日本庭園の背景画像を優先表示（適度な透過度で庭園の風情を美しく見せる） */
 body.parallax-bg footer {
-  background: linear-gradient(rgba(18, 26, 22, 0.95), rgba(18, 26, 22, 0.98)), url('https://cdn.peraichi.com/userData/53421ea1-3241-495f-b9ea-315ce1a42b2b/img/662f49757db38/original.jpeg') center/cover no-repeat !important;
+  background: linear-gradient(rgba(18, 26, 22, 0.70), rgba(18, 26, 22, 0.78)), url('../images/footer-bg.jpg') center/cover no-repeat !important;
 }
 
 /* スマホ（iOS Safari対応）: fixed→scroll に変更 */
@@ -473,7 +473,7 @@ section {
 
 /* Footer */
 footer {
-  background: linear-gradient(rgba(18, 26, 22, 0.88), rgba(18, 26, 22, 0.92)), url('../images/footer-bg.jpg') center/cover no-repeat;
+  background: linear-gradient(rgba(18, 26, 22, 0.70), rgba(18, 26, 22, 0.78)), url('../images/footer-bg.jpg') center/cover no-repeat;
   color: #e2e8f0;
   text-align: center;
   padding: 5rem 5% 2rem;
