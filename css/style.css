@@ -178,7 +178,7 @@ body.parallax-bg #campaigns {
   border-bottom: 3px solid #d4af37;
 }
 .bf-container {
-  max-width: 900px;
+  max-width: 980px;
   margin: 0 auto;
 }
 .bf-badge {
@@ -260,8 +260,8 @@ body.parallax-bg #campaigns {
 }
 .bf-pricing-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
+  gap: 1.25rem;
   text-align: left;
 }
 .bf-plan-card {
